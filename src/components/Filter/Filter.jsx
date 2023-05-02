@@ -1,4 +1,5 @@
 import React from 'react';
+import css from './Filter.module.css'
 
 const Filter = ({ filter, onChange }) => {
     return (
@@ -8,6 +9,7 @@ const Filter = ({ filter, onChange }) => {
             value={filter}
             onChange={({ target }) => onChange(target.value)}
             placeholder='Enter name for search'
+            className={css.Filter__input}
         />
         
     )

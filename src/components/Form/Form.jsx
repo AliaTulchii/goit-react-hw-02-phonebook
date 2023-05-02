@@ -69,6 +69,7 @@ class Form extends Component {
                 placeholder="Enter name"
                 value={name}
                 onChange={this.handleChange}
+                className={css.Form__input}
                     />
             </label>
                 
@@ -83,10 +84,11 @@ class Form extends Component {
                     placeholder="Enter phone number"
                     value={number}
                     onChange={ this.handleChange} 
+                    className={css.Form__input}
                     />
                 </label>
                 
-                <button type="submit"> Add contact</button>
+                <button type="submit" className={css.Form__button}> Add contact</button>
             </form>
         )
     }
