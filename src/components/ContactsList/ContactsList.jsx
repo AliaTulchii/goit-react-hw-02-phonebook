@@ -1,9 +1,11 @@
 import React from 'react';
 import css from './ContactsList.module.css'
-import {FaTrashAlt} from 'react-icons/fa'
+import { FaTrashAlt } from 'react-icons/fa'
+import person from './person.png'
+import PropTypes from 'prop-types'
 
 
-const ContactListItem = ({ id, name, number, avatar, onDelete }) => {
+const ContactListItem = ({ id, name, number, avatar = person, onDelete }) => {
     return (
         <li key={id}
             className={css.ContactsList__item}>     
@@ -28,3 +30,15 @@ const ContactList = ({ contacts, onDelete }) => {
 }
 
 export default ContactList;
+
+
+ContactList.propTypes = {
+    contacts: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            name: PropTypes.string.isRequired,
+            number: PropTypes.number.isRequired,
+            avatar: PropTypes.string.isRequired,
+        })
+    )
+}
